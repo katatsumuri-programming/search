@@ -1,0 +1,39 @@
+<head>
+ <meta charset="utf-8">
+ <link rel="stylesheet" href="style.css">
+ <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+ <title>的確検索</title>
+</head>
+<body>
+ <div class="main">
+ <div class="keyword_div">
+ <p>検索ワード<input type="text" id="keyword"></p>
+ </div>
+ <div class="domain_div">
+  <h2>ドメイン</h2>
+  <p class="domain"><input type="checkbox" name="domain_type" value="public" id="public"><label for="public">公的機関 ac.jp / lg.jp / go.jp</label></p>
+  <p class="domain"><input type="checkbox" name="domain_type" value="medical" id="medical"><label for="medical">医療情報 ac.jp</label></p>
+  <p class="domain"><input type="checkbox" name="domain_type" value="paper_domestic" id="paper_domestic"><label for="paper_domestic">国内論文 ci.nii.ac.jp</label></p>
+  <p class="domain"><input type="checkbox" name="domain_type" value="paper_american" id="paper_american"><label for="paper_american">英文論文 pubmed.ncbi.nlm.nih.gov</label></p>
+  <p class="domain"><input type="checkbox" name="domain_type" value="other" id="other"><label for="other">その他の特定のドメイン (例 wikipedia.com)</label><input type="text" id="domain_text"></p>
+
+ </div>
+ <div class="file_div">
+  <h2>ファイルタイプ</h2>
+  <p class="file"><input type="checkbox" name="file_type" value="pdf" id="pdf"><label for="pdf">pdf</label></p>
+  <p class="file"><input type="checkbox" name="file_type" value="powerpoint" id="powerpoint"><label for="powerpoint">powerpoint</label></p>
+  <p class="file"><input type="checkbox" name="file_type" value="word" id="word"><label for="word">word</label></p>
+  <p class="file"><input type="checkbox" name="file_type" value="excel" id="excel"><label for="excel">excel</label></p>
+ </div>
+ <div class="language">
+  <h2>言語検索</h2>
+  <p><input type="checkbox" name="language" value="english" id="english"><label for="english">英語で検索</label></p></p>
+ </div>
+ <div class="search_button">
+  <input type="button" value="検索" onclick="search()">
+ </div>
+ </div>
+ <script type="text/javascript" src="script.js"></script>
+</body>
+
