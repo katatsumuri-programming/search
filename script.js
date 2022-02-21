@@ -99,11 +99,11 @@ function search() {
             });
         }
 
-/*
+
         search_main = keyword + " " + domain_str + " " + file_str
         console.log(search_main);
         window.location.href = "https://www.google.com/search?q=" + search_main;
-*/
+
 
     }
 }
