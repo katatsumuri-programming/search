@@ -8,7 +8,7 @@
 <body>
  <div class="main">
  <div class="keyword_div">
- <p>検索ワード<input type="text" id="keyword"></p>
+ <p><input type="search" id="keyword" placeholder="検索したいことを入れてください"><input type="button" value="検索" onclick="search()" class="button"></p>
  </div>
  <div class="domain_div">
   <h2>ドメイン</h2>
@@ -16,7 +16,7 @@
   <p class="domain"><input type="checkbox" name="domain_type" value="medical" id="medical"><label for="medical">医療情報 ac.jp</label></p>
   <p class="domain"><input type="checkbox" name="domain_type" value="paper_domestic" id="paper_domestic"><label for="paper_domestic">国内論文 ci.nii.ac.jp</label></p>
   <p class="domain"><input type="checkbox" name="domain_type" value="paper_american" id="paper_american"><label for="paper_american">英文論文 pubmed.ncbi.nlm.nih.gov</label></p>
-  <p class="domain"><input type="checkbox" name="domain_type" value="other" id="other"><label for="other">その他の特定のドメイン (例 wikipedia.com)</label><input type="text" id="domain_text"></p>
+  <p class="domain"><input type="checkbox" name="domain_type" value="other" id="other"><label for="other">その他の特定のドメイン</label><input type="text" id="domain_text" placeholder="(例 wikipedia.com)"></p>
 
  </div>
  <div class="file_div">
@@ -30,9 +30,10 @@
   <h2>言語検索</h2>
   <p><input type="checkbox" name="language" value="english" id="english"><label for="english">英語で検索</label></p></p>
  </div>
- <div class="search_button">
-  <input type="button" value="検索" onclick="search()">
+
  </div>
+ <div class="loading">
+  <p>Loading...</p>
  </div>
  <script type="text/javascript" src="script.js"></script>
 </body>

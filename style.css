@@ -12,7 +12,7 @@ p {
 
     margin: auto;
     margin-top: 50px;
-    width: 1000px;
+    width: 700px;
 }
 
 body {
@@ -24,11 +24,12 @@ input {
 }
 label {
     cursor: pointer;
+    padding-left: 15px;
 }
 input[type="checkbox"] {
     width: 20px;
     height: 20px;
-    margin-right: 15px;
+
 }
 
 input[type="text"] {
@@ -51,6 +52,52 @@ input[type="text"] {
 h2 {
     margin-bottom: 0;
 }
-.language {
+.loading {
+    position: absolute;
+    width:100%;
+    height:100%;
+    top: 0;
+    left: 0;
+    background-color: #00bfff;
+    text-align: center;
     display: none;
+    opacity: 0.8;
+    color: #000;
+}
+.loading p {
+    margin-top: 40vh;
+}
+
+#keyword {
+    width: 500px;
+    height: 50px;
+    padding: 10px;
+    border-radius:10px 0 0 10px;
+    border: solid 3px #1e90ff;
+    border-right: none;
+}
+.button {
+    height: 50px;
+    background-color: #fff;
+    border: solid 3px #1e90ff;
+    position: absolute;
+    border-left: none;
+    border-radius: 0 10px 10px 0;
+    padding: 0 15px 0 15px;
+    color: #fff;
+    background-color: #1e90ff;
+}
+#keyword:focus {
+    outline: none;
+}
+#keyword::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+#domain_text {
+    border: solid 2px #228b22;
+    padding: 8px;
+    font-size: 20px;
+}
+#domain_text:focus {
+    outline: none;
 }

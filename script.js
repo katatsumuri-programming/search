@@ -2,6 +2,8 @@ function search() {
     var keyword = $("#keyword").val();
 
     if (!(keyword == "")) {
+        $(".loading").css("display", "block")
+        var en = false;
         console.log(keyword);
         var domain = [];
         $(':checkbox[name="domain_type"]:checked').each(function () {
@@ -88,22 +90,41 @@ function search() {
         });
 
         if (language.length > 0) {
-            console.log(language)
-            google.load("language", "1");
-            $(function(){
-                google.language.translate(keyword, "ja", "en", function(result) {
-                    if (!result.error) {
-                        console.log(result)
-                    }
-                });
+            console.log(language);
+            request_url = url = new URL("https://script.google.com/macros/s/AKfycbwfioh7H-WjiKvNMgJ9o5HBtN0izaulFKlA_6jf4Cc302LaMD-pBX1DM3cEGqAryCIj/exec");
+            request_url.searchParams.set("text", keyword);
+            request_url.searchParams.set("source", "ja");
+            request_url.searchParams.set("target", "en");
+            request_url = request_url.toString();
+            console.log(request_url);
+            fetch(request_url)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data["text"]);
+                keyword = data["text"];
+                en = true;
             });
         }
+        setTimeout(() => {
+            search_main = keyword + " " + domain_str + " " + file_str
+            console.log(search_main);
+            if (en) {
+                url = "https://www.google.com/search?q=" + search_main + "&gl=us&hl=en";
+            } else {
+                url = "https://www.google.com/search?q=" + search_main
+            }
+            window.location.href = url;
+        },2000)
+        //https://script.google.com/macros/s/AKfycbwfioh7H-WjiKvNMgJ9o5HBtN0izaulFKlA_6jf4Cc302LaMD-pBX1DM3cEGqAryCIj/exec
 
-
-        search_main = keyword + " " + domain_str + " " + file_str
-        console.log(search_main);
-        window.location.href = "https://www.google.com/search?q=" + search_main;
 
 
     }
 }
+
+
+$("#keyword").keypress(function(e) {
+    if (e.keyCode == 13) {
+        search();
+    }
+});
